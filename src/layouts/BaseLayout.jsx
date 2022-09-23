@@ -6,12 +6,10 @@ const BaseLayout = ({ children }) => {
   return (
     <>
       <CssBaseline />
-      <Box display='flex' minHeight='100vh' flexDirection='column' borderRadius='10px'>
+      <Box >
         <Header />
         <Box flex={1}>
-          <main>
-            <Container>{children}</Container>
-          </main>
+          <Container>{children}</Container>
         </Box>
 
       </Box>

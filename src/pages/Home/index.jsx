@@ -3,8 +3,11 @@ import { Box, Container } from '@mui/material';
 import { useLocation } from 'react-router-dom';
 import BaseLayout from '../../layouts/BaseLayout';
 
+import { similars } from '../../utils/image';
 
 import { flexbox } from '@mui/system';
+import MyCarousel from '../../components/MyCarousel';
+
 
 
 const Home = () => {
@@ -20,13 +23,10 @@ const Home = () => {
     return (
         <>
             <BaseLayout>
-                <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-                    <Container sx={{ display: 'flex', justifyItems: 'center', flexDirection: 'column', gap: '30px' }}>
-                        <h1>Page Home </h1>
+                <Box >
+                    <Container >
+                        <MyCarousel props={similars} />
                     </Container>
-
-
-
                 </Box>
             </BaseLayout>
 

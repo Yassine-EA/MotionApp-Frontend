@@ -10,7 +10,6 @@ const Contact = () => {
         <>
             <BaseLayout>
                 <h1>Contact</h1>
-                <MyCarousel />
             </BaseLayout>
         </>
     );
