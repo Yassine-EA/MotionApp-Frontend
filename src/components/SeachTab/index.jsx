@@ -2,6 +2,7 @@ import * as React from 'react';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import CircularProgress from '@mui/material/CircularProgress';
+import { StayPrimaryLandscape } from '@mui/icons-material';
 
 function sleep(delay = 0) {
     return new Promise((resolve) => {
@@ -9,7 +10,7 @@ function sleep(delay = 0) {
     });
 }
 
-const SeachTab = (params) => {
+const SeachTab = () => {
 
     function Asynchronous() {
         const [open, setOpen] = React.useState(false);
@@ -45,7 +46,7 @@ const SeachTab = (params) => {
         return (
             <Autocomplete
                 id="asynchronous-demo"
-                sx={{ width: 300 }}
+                sx={{ width: 500 }}
                 open={open}
                 onOpen={() => {
                     setOpen(true);
@@ -58,15 +59,16 @@ const SeachTab = (params) => {
                 options={options}
                 loading={loading}
                 renderInput={(params) => (
-                    <TextField sx={{ backgroundColor: 'white' }}
+                    <TextField label='Recherche'
                         size='small'
+                        sx={{ backgroundColor: "white", border: "2px black", borderRadius: "10px" }}
                         {...params}
-                        placeholder="Recherche"
+                        placeholder="Recherche..."
                         InputProps={{
                             ...params.InputProps,
                             endAdornment: (
                                 <React.Fragment>
-                                    {loading ? <CircularProgress color="primary" /> : null}
+                                    {loading ? <CircularProgress color="warning" /> : null}
                                     {params.InputProps.endAdornment}
                                 </React.Fragment>
                             ),

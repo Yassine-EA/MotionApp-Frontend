@@ -11,8 +11,9 @@ import FormControl from '@mui/material/FormControl';
 import TextField from '@mui/material/TextField';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import { Grid } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 import { Container } from '@mui/system';
+import { Link } from 'react-router-dom';
 
 const SignInForms = () => {
     const [values, setValues] = React.useState({
@@ -89,6 +90,14 @@ const SignInForms = () => {
 
                 </Grid>
             </Grid>
+            <p>Vous n'avez pas encore de compte ?
+                <Typography
+                    color='inherit'
+                    variant='h6'
+                    component={Link}
+                    to='/signup'
+                    sx={{ textDecoration: 'none' }}
+                >Créez-en un !</Typography> </p>
         </Container>
 
     );

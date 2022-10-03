@@ -11,9 +11,9 @@ import StarsIcon from '@mui/icons-material/Stars';
 import { Link, NavLink } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import SeachTab from "../../components/SeachTab";
-import { grey } from '@mui/material/colors';
+import { grey, lightBlue, red } from '@mui/material/colors';
 import { display } from '@mui/system';
-
+import { MyApp } from '../DarkMode';
 
 const theme = createTheme({
     status: {
@@ -21,8 +21,8 @@ const theme = createTheme({
     },
     palette: {
         primary: {
-            main: grey[900],
-            darker: '#304ffe',
+            main: lightBlue[800],
+            darker: grey[900],
         },
         neutral: {
             main: '#304ffe',
@@ -31,19 +31,20 @@ const theme = createTheme({
     },
 });
 
+
 const Header = () => {
     return (
         <header>
             <ThemeProvider theme={theme}>
-                <AppBar position='static' color='primary' sx={{ borderRadius: '30px' }} >
+                <AppBar position='fixed' color='transparent' sx={{ padding: '0px', margin: '0px' }} >
                     <Toolbar sx={{ display: 'flex', justifyContent: 'space-evenly' }}>
                         <Typography
                             size='large'
-                            color='inherit'
+
                             variant='h6'
                             component={Link}
                             to='/'
-                            sx={{ textDecoration: 'none' }}
+                            sx={{ textDecoration: 'none', color: "#ff3d00" }}
                         >
                             <HomeIcon fontSize="large" />
                         </Typography>
@@ -52,7 +53,7 @@ const Header = () => {
                             variant='h6'
                             component={Link}
                             to='/movies'
-                            sx={{ textDecoration: 'none' }}
+                            sx={{ textDecoration: 'none', color: "#ff3d00" }}
                         >
                             <LocalMoviesIcon fontSize="large" />
                         </Typography>
@@ -62,7 +63,7 @@ const Header = () => {
                             variant='h6'
                             component={Link}
                             to='/tv'
-                            sx={{ textDecoration: 'none' }}
+                            sx={{ textDecoration: 'none', color: "#ff3d00" }}
                         >
                             <LiveTvIcon fontSize="large" />
                         </Typography>
@@ -71,17 +72,17 @@ const Header = () => {
                             variant='h6'
                             component={Link}
                             to='/actors'
-                            sx={{ textDecoration: 'none' }}
+                            sx={{ textDecoration: 'none', color: "#ff3d00" }}
                         >
                             <StarsIcon fontSize="large" />
                         </Typography>
-                        <SeachTab sx={{ size: '15vw' }} />
+                        <SeachTab />
                         <Typography
                             color='inherit'
                             variant='h6'
                             component={Link}
                             to='/contact'
-                            sx={{ textDecoration: 'none' }}
+                            sx={{ textDecoration: 'none', color: "#ff3d00" }}
                         >
                             <ContactMailIcon fontSize="large" />
                         </Typography>
@@ -90,35 +91,14 @@ const Header = () => {
                             variant='h6'
                             component={Link}
                             to='/signin'
-                            sx={{ textDecoration: 'none' }}
+                            sx={{ textDecoration: 'none', color: "#ff3d00" }}
                         >
                             <LoginIcon fontSize="large" />
                         </Typography>
-                        <Typography
-                            color='inherit'
-                            variant='h6'
-                            component={Link}
-                            to='/signup'
-                            sx={{ textDecoration: 'none' }}
-                        >
-                            <PersonAddIcon fontSize="large" />
-                        </Typography>
-                        <Typography
-                            color='inherit'
-                            variant='h6'
-                            component={Link}
-                            to='/signup'
-                            sx={{ textDecoration: 'none' }}
-                        >
-                        </Typography>
+                        <MyApp />
                     </Toolbar>
                 </AppBar>
             </ThemeProvider>
-            {/* <nav>
-                <Link to="/">Home</Link>
-                <Link to="/about">About</Link>
-                <Link to="/contact">Contact</Link>
-            </nav> */}
         </header >
     );
 };

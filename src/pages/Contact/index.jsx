@@ -1,4 +1,6 @@
-import MyCarousel from '../../components/MyCarousel';
+
+
+import GenreSelector from '../../containers/Selector';
 import BaseLayout from '../../layouts/BaseLayout';
 
 
@@ -10,7 +12,10 @@ const Contact = () => {
         <>
             <BaseLayout>
                 <h1>Contact</h1>
+                <GenreSelector></GenreSelector>
             </BaseLayout>
+
+
         </>
     );
 
