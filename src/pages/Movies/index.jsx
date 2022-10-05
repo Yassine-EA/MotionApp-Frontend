@@ -3,10 +3,11 @@ import 'swiper/css';
 import "./Movies.css";
 import * as React from 'react';
 import BaseLayout from '../../layouts/BaseLayout';
-import { Box, Grid, LinearProgress, Paper } from "@mui/material";
+import { Box, Grid, LinearProgress, Paper, Typography } from "@mui/material";
 
 import useQuery from "../../hooks/useQuery";
 import Media from "../../components/Media";
+import { Link } from 'react-router-dom';
 
 
 
@@ -33,7 +34,6 @@ const Movies = () => {
             if (element.media_type === 'Movie') {
                 medias.push(element);
             }
-
         });
         return (
             <>
@@ -44,7 +44,9 @@ const Movies = () => {
                             medias.map((item) => {
                                 return (
                                     <Grid item xs={12} sm={6} md={6} lg={4} xl={4} key={item.id}>
-                                        <Media props={item} />
+                                        <Typography component={Link} to={`/movies/detail/${item.id_media}`} >
+                                            <Media props={item} />
+                                        </Typography>
                                     </Grid>
                                 )
                             })
@@ -54,7 +56,6 @@ const Movies = () => {
                 </Box>
             </>
         );
-
     }
 
 

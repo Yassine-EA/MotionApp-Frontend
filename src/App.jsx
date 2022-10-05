@@ -16,6 +16,8 @@ import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import TvShows from "./pages/TvShows";
 import Actors from "./pages/Actors";
+import MovieDetails from './pages/MovieDetails';
+import DeadEnd from './pages/DeadEnd';
 
 
 function App() {
@@ -40,11 +42,13 @@ function App() {
     <Routes>
       <Route path='/' element={<Home />} />
       <Route path="movies" element={<Movies />} />
+      <Route path="movies/detail/:id" element={<MovieDetails />} />
       <Route path='tv' element={<TvShows />} />
       <Route path='signin' element={<SignIn />} />
       <Route path='signup' element={<SignUp />} />
       <Route path='actors' element={<Actors />} />
       <Route path='contact' element={<Contact />} />
+      <Route path="*" element={<DeadEnd />} />
     </Routes>
 
   );

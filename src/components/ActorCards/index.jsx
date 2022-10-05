@@ -17,11 +17,6 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { Box, LinearProgress } from '@mui/material';
 import { typography } from '@mui/system';
 
-
-
-
-
-
 const ActorCards = ({ props }) => {
 
     return (
@@ -40,7 +35,6 @@ const ActorCards = ({ props }) => {
                 title={
                     <Typography variant='h6'>
                         {props.full_name}
-
                     </Typography>
                 }
 
@@ -52,9 +46,7 @@ const ActorCards = ({ props }) => {
                 alt=""
             />
             <CardContent>
-
             </CardContent>
-
         </Card>
     );
 }

@@ -90,14 +90,14 @@ const SignInForms = () => {
 
                 </Grid>
             </Grid>
-            <p>Vous n'avez pas encore de compte ?
-                <Typography
-                    color='inherit'
-                    variant='h6'
-                    component={Link}
-                    to='/signup'
-                    sx={{ textDecoration: 'none' }}
-                >Créez-en un !</Typography> </p>
+            <p>Vous n'avez pas encore de compte ?</p>
+            <Typography
+                color='inherit'
+                variant='h6'
+                component={Link}
+                to='/signup'
+                sx={{ textDecoration: 'none' }}
+            ><p> Créez-en un !</p></Typography>
         </Container>
 
     );
