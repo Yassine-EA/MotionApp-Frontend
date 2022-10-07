@@ -17,16 +17,13 @@ import LanguageIcon from '@mui/icons-material/Language';
 import StarIcon from '@mui/icons-material/Star';
 import MovieDemos from '../MovieDemo';
 import Fab from '@mui/material/Fab';
-import NavigationIcon from '@mui/icons-material/Navigation';
+
 import SendIcon from '@mui/icons-material/Send';
 import { Link } from 'react-router-dom';
-
-
 
 const Demo = styled('div')(({ theme }) => ({
     backgroundColor: theme.palette.background.default,
 }));
-
 const Lister = ({ props }) => {
     const [dense, setDense] = React.useState(false);
     const [secondary, setSecondary] = React.useState(false);
@@ -51,7 +48,6 @@ const Lister = ({ props }) => {
                             }
                             label="Détails"
                         />
-
                         <Typography component={Link} to={`/movies`} >
                             <Fab variant="extended" size='small' color='error' >
                                 <SendIcon sx={{ mr: 1 }} />
@@ -116,7 +112,6 @@ const Lister = ({ props }) => {
                     }}
                     />
                 </Grid>
-
             </Grid>
         </Box >
     );
